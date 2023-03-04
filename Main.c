@@ -10,7 +10,7 @@ int main() {
   //declaring vars
   FILE* logo; // Makes logo a pointer
   int run;    // sets "run" as a variable, this will be used later in the program to tell the program to move on
-  logo = fopen("log.ass", "r");  // Opens the logo file and puts it into ram as "log"
+  logo = fopen("assets/log.ass", "r");  // Opens the logo file and puts it into ram as "log"
   char line; //Makes variable that will store each line of file read from
   //setting up ncurses
   initscr();  //Creates stdscr *Used by ncurses for keyboard input*
@@ -21,7 +21,7 @@ int main() {
   do { //prints logo to screen 
   line = fgetc(logo); // Saves first line of log in pre-allocated memory
   printw("%c", line); // Prints the var to the screen
-} while (logo != EOF);
+} while(line != EOF);
 
   getch();  //Waits for user to press any key but soon I will make it "Enter" key specific"
 
