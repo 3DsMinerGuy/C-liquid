@@ -18,10 +18,19 @@ int main() {
 
   //Displays opening screen and prompts the user to press enter to start the program
   //While using ncurses like we are now use "printw" instead of "printf" to display text
-  do { //prints logo to screen 
-  line = fgetc(logo); // Saves first line of log in pre-allocated memory
-  printw("%c", line); // Prints the var to the screen
-} while(line != EOF);
+  int gp(){   //Makes the reading and printing a function for use later in the program
+    do { //prints logo to screen 
+    line = fgetc(logo); // Saves first line of log in pre-allocated memory
+    printw("%c", line); // Prints the var to the screen
+    } while(line != EOF); // Checks to see if the var line is storing the data  at the end of the file id so it lets the program continue
+    return 0;
+  }//function ends here
+  gp(); // calls the previously made function
+  printw("\n"); // prints blank line to make terminal look lett cluttered
+  logo = fopen("assets/tit.scr","r"); //reuses the first memory adress from before  so calling the same function will do something completely different
+  gp(); //calling said functiuon
+  
+
 
   getch();  //Waits for user to press any key but soon I will make it "Enter" key specific"
 
@@ -30,4 +39,4 @@ int main() {
 
 
 
-} 
+}
