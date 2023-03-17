@@ -1,4 +1,4 @@
-x//imports libraies
+//imports libraies
 #include <stdio.h> 
 #include <ncurses.h>
 #include <stdlib.h>  //relates to string.h
