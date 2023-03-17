@@ -3,7 +3,7 @@
 #include <ncurses.h> //Library for key input
 #include <stdlib.h>  //relates to string.h
 #include <string.h>  // adds support for string type variables
-#include <sys/ioctl.h>// Library for getting terminal width
+#include <sys/ioctl.h>// Library we will use for getting terminal width
 
 // Marks anything between the the next curly brackest as the main function
 int main() {
@@ -36,10 +36,7 @@ int main() {
   struct winsize w; // Makes var used to store term dimsensions
     ioctl(0, TIOCGWINSZ, &w);// Gets the width and height
 
-    height = w.ws_row;  //Stores height in a var
-    width = w.ws_col;  //Stores Width in a var
 
-  printw(w.ws_row, w.ws_col); // prints height and width vars as a test (Broken rn)
   getch(); //waits for user input
 
   endwin(); //kills ncurses. If this command is not called the program will not close right, I will put it above return for now 
